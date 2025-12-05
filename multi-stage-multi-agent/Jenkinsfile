@@ -9,7 +9,7 @@ pipeline {
       }
       steps {
 
-        dir('java-hello-world') {    // <<< MUST POINT TO THE FOLDER WHERE pom.xml EXISTS
+        dir('java-hello-world') {   // <<– correct folder based on your screenshot
 
           echo "Compiling and running Java HelloWorld program..."
           sh 'mvn clean compile'
@@ -34,4 +34,5 @@ pipeline {
 
   }
 }
+
 
