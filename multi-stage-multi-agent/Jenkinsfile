@@ -5,19 +5,16 @@ pipeline {
       agent {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
-   
             steps {
                 echo "Compiling and running Java HelloWorld program..."
                 sh 'mvn clean compile'
                 sh 'java -cp target/classes com.example.HelloWorld'
-            }
+            
         
-
-       
-            steps {
+            
                 echo "Running unit tests..."
                 sh 'mvn test'
-            }
+            
         }
     stage('Front-end') {
       agent {
